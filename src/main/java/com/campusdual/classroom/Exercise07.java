@@ -1,10 +1,14 @@
 package com.campusdual.classroom;
 
 
+import java.util.ArrayList;
+
 public class Exercise07 {
 
     public static void main(String[] args) {
-
+            positionInAList(5);
+            sumFirstNaturalNumbers(5);
+            showFirstNaturalNumbers(33);
     }
 
     //TODO ↓
@@ -15,18 +19,49 @@ public class Exercise07 {
     // Si NO lo encuentra, que imprima el siguiente mensaje → El elemento X no se encuentra en la lista.
     public static void positionInAList(int num) {
 
+        ArrayList<Integer> lista = new ArrayList<>();
+        int control = 0;
+
+        lista.add(10);
+        lista.add(9);
+        lista.add(8);
+        lista.add(7);
+        lista.add(6);
+        lista.add(5);
+        lista.add(4);
+        lista.add(3);
+        lista.add(2);
+        lista.add(1);
+        lista.add(0);
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).equals(num)){
+                control = lista.get(i);
+            }
+        }
+        if(control != 0){
+            System.out.println("El elemento "+ num +" se encuentra en la posición: "+ (control + 1));
+        }else {
+             System.out.println("El elemento "+num+" no se encuentra en la lista.");
+        }
     }
 
     //TODO ↓
     // Que imprima como mensaje la suma de los primeros N números positivos
     public static void sumFirstNaturalNumbers(int num) {
-
+        int suma = 0;
+        for (int i = 0; i <= num; i++) {
+            suma += i;
+        }
+        System.out.println(suma);
     }
 
     //TODO ↓
     // Que imprima por pantalla los N primeros números positivos
     public static void showFirstNaturalNumbers(int num) {
-
+        for (int i = 1; i <= num; i++) {
+            System.out.println(i);
+        }
     }
 
 }
